@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Database Student Agent</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <main class="app-shell">
+        <section class="chat-panel" aria-label="Agent chat">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">AI Database Agent</p>
+                    <h1>Student Console</h1>
+                </div>
+                <span id="status" class="status">Connecting</span>
+            </header>
+
+            <div id="chat" class="chat-log" aria-live="polite"></div>
+
+            <form id="chat-form" class="chat-form">
+                <input id="message" name="message" type="text" placeholder="show all cs students" autocomplete="off">
+                <button id="send-button" type="submit" title="Send message" aria-label="Send message">Send</button>
+            </form>
+        </section>
+
+        <section class="data-panel" aria-label="Students">
+            <div class="panel-header">
+                <div>
+                    <p class="eyebrow">Database</p>
+                    <h2>Students</h2>
+                </div>
+                <input id="student-search" type="search" placeholder="Search">
+            </div>
+
+            <form id="student-form" class="student-form">
+                <input id="student-name" name="name" type="text" placeholder="Name" required>
+                <input id="student-roll" name="roll" type="number" min="0" placeholder="Roll" required>
+                <input id="student-dept" name="dept" type="text" placeholder="Dept" required>
+                <button type="submit">Add</button>
+            </form>
+
+            <div id="notice" class="notice" role="status"></div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Roll</th>
+                            <th>Dept</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="students-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
